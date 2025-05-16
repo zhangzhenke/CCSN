@@ -15,10 +15,10 @@ class SegmentationPresetTrain:
         scale = np.random.uniform(0.5, 2.0)
 
         # 新的宽与高
-        min_width = int(width * scale)
-        min_height = int(height * scale)
+        n_width = int(width * scale)
+        n_height = int(height * scale)
 
-        trans = [T.RandomResize(min_height, min_width)]
+        trans = [T.RandomResize(n_height, n_width)]
         trans.extend([
             # 裁剪
             T.RandomCrop(crop),
@@ -76,7 +76,7 @@ class DatasetTrain(torch.utils.data.Dataset):
         label_img_path = example["label_img_path"]
         label_img = Image.open(label_img_path) # (shape: (H , W))
 
-        # 获取原始图像大小
+        # 获取原始图像大小(width, height)
         original_width, original_height = img.size
 
         transforms_train = SegmentationPresetTrain(original_width, original_height)
