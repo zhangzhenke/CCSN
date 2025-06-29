@@ -8,12 +8,15 @@
 📦CellFinder
  ┣ 📂PublicData
  ┃ ┣ 📜CellFinder.py
- ┃ ┣ 📜images.npy
- ┃ ┃ ┗ 📜types.npy
- ┣ 📂masks
- ┃ ┣ 📂fold1
- ┃ ┃ ┗ 📜masks.npy
- ┃ ┣ 📜by-nc-sa.md
- ┃ ┗ 📜README.md
- ┗
+ ┃ ┣ 📜datasets.py
+ ┃ ┣ 📜engine.py
+ ┃ ┣ 📜label_flow_mask.py
+ ┃ ┣ 📜main_train.py
+ ┃ ┣ 📜transforms.py
+ ┃ ┃ ┗ 📜ytils.py
+ ┣ 📂PreTrain
+ ┃ ┣ 📜engine_pretrain.py
+ ┃ ┣ 📜main_pretrain.py
+ ┃ ┗ 📜models_mae.py
+ ┗📂CellBinDB
 ```
