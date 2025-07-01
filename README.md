@@ -1,4 +1,4 @@
-# Cancer Cell instance Segmentation Network 用于苏木精-伊红染色的癌细胞实例分割网络（readme is under reconstruction）
+# Cancer Cell instance Segmentation Network 用于苏木精-伊红染色的癌细胞实例分割网络
 
 
 ## Introduction
@@ -53,4 +53,48 @@ pip install git+https://github.com/facebookresearch/segment-anything.git
 [Lizard Data download link](https://link.zhihu.com/?target=https%3A//www.kaggle.com/datasets/aadimator/lizard-dataset)
 
 [Conic Data download link](https://conic-challenge.grand-challenge.org/Data/)
+
+[Monuseg Data download link](https://monuseg.grand-challenge.org/Data/)
+
+[PanNuke Data download link](https://warwick.ac.uk/fac/sci/dcs/research/tia/data/pannuke)
+
+[PanNuke Data download link](https://warwick.ac.uk/fac/sci/dcs/research/tia/data/pannuke)
 ![figure2](docs/figure2.png)
+
+
+### Use via command line
+#### Cell segmentation
+- Modify the parameters in the following command and input it into the command line:  
+```
+python Demo/main_ccsn.py -i your_inputpath -o your_outputpath -n  ypur_filename -b  
+```
+- Where:
+
+- -i is the input image path  
+-o is the output mask path  
+-n is the your file name  
+-b is the 0.25mpp   
+
+
+#### Segmentation evaluation
+- Ensure that the images in the gt folder have filenames with "**_mask**" and the images in the algorithm output mask folder have filenames with "**_img**", with only this difference in their names.   
+  
+- Modify the parameters in the following command and input it into the command line:
+```
+python src/eval/predict_ccsn.py -g gt_path -d dt_path -o result_path
+```
+- Where:
+
+- -g is the path to the ground truth (GT) folder  
+-d is the path to the algorithm output mask folder  
+-o is the output path for the results 
+
+
+## License and Citation
+
+
+## Reference 
+> [sam](https://github.com/facebookresearch/segment-anything)   
+> [mediar](https://github.com/Lee-Gihun/MEDIAR)   
+> [stardist](https://github.com/stardist/stardist)    
+> [mae](https://github.com/facebookresearch/mae)   
