@@ -11,26 +11,28 @@
 git clone https://github.com/zhangzhenke/CCSN.git  
 cd ccsn 
 ```
+
 - Create an environment for CCSN.
 ```
 # python3.8 in conda env
 conda create --name=ccsn python=3.8
 conda activate ccsn
 pip install -r requirements.txt
-pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
-- Download the necessary model file
 
-    [sam_vit_b_01ec64.pth](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth)  
-    [MAE](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_large.pth)  
-    After downloading the model file, place it in the **src/models** directory of the project.
+- Download the necessary model file
+```
+[sam_vit_b_01ec64.pth](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth)  
+[MAE-ViT-L](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_large.pth)  
+After downloading the model file, place it in the **src/models** directory of the project.
+```
 
 
 ## CellFinder
 细胞检测器，产生目标框供SAM模型提示产生精确的分割掩码。
 ```
 📦CellFinder
- ┣ 📂PublicData
+ ┣ 📂PublicData -- 联合数据集训练
  ┃ ┣ 📜CellFinder.py
  ┃ ┣ 📜datasets.py
  ┃ ┣ 📜engine.py
@@ -38,11 +40,11 @@ pip install git+https://github.com/facebookresearch/segment-anything.git
  ┃ ┣ 📜main_train.py
  ┃ ┣ 📜transforms.py
  ┃ ┃ ┗ 📜ytils.py
- ┣ 📂PreTrain
+ ┣ 📂PreTrain -- 无标签数据预训练
  ┃ ┣ 📜engine_pretrain.py
  ┃ ┣ 📜main_pretrain.py
  ┃ ┗ 📜models_mae.py
- ┗ 📂CellBinDB
+ ┗ 📂CellBinDB -- 特定数据集微调
 ```
 
 
@@ -50,14 +52,11 @@ pip install git+https://github.com/facebookresearch/segment-anything.git
 ### Data
 [CellBinDb Data download link](https://bgipan.genomics.cn/#/link/v2dKKUZf8M3YFpGWvB5g)    
 ![figure1](docs/figure1.png)
-[Lizard Data download link](https://link.zhihu.com/?target=https%3A//www.kaggle.com/datasets/aadimator/lizard-dataset)
 
+[Lizard Data download link](https://www.kaggle.com/datasets/aadimator/lizard-dataset)
 [Conic Data download link](https://conic-challenge.grand-challenge.org/Data/)
-
 [Monuseg Data download link](https://monuseg.grand-challenge.org/Data/)
-
 [PanNuke Data download link](https://warwick.ac.uk/fac/sci/dcs/research/tia/data/pannuke)
-
 [PanNuke Data download link](https://warwick.ac.uk/fac/sci/dcs/research/tia/data/pannuke)
 ![figure2](docs/figure2.png)
 
@@ -66,14 +65,14 @@ pip install git+https://github.com/facebookresearch/segment-anything.git
 #### Cell segmentation
 - Modify the parameters in the following command and input it into the command line:  
 ```
-python Demo/main_ccsn.py -i your_inputpath -o your_outputpath -n  ypur_filename -b  
+python demo/main_ccsn.py -i your_inputpath -o your_outputpath -n  ypur_filename -b  
 ```
 - Where:
 
 - -i is the input image path  
 -o is the output mask path  
 -n is the your file name  
--b is the 0.25mpp   
+-b is if 0.25mpp file
 
 
 #### Segmentation evaluation
