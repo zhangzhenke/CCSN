@@ -18,5 +18,5 @@
  ┃ ┣ 📜engine_pretrain.py
  ┃ ┣ 📜main_pretrain.py
  ┃ ┗ 📜models_mae.py
- ┗📂CellBinDB
+ ┗ 📂CellBinDB
 ```
