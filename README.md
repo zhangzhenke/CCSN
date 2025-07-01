@@ -21,9 +21,9 @@ pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
 - Download the necessary model file
 
-[sam_vit_b_01ec64.pth](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth)  
-[MAE](https://drive.google.com/drive/folders/1eZLGuQkxF5ouBgTA2UuH0beLcm635ADS)  
-After downloading the model file, place it in the **src/models** directory of the project.
+    [sam_vit_b_01ec64.pth](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth)  
+    [MAE](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_large.pth)  
+    After downloading the model file, place it in the **src/models** directory of the project.
 
 
 ## CellFinder
@@ -44,3 +44,12 @@ After downloading the model file, place it in the **src/models** directory of th
  ┃ ┗ 📜models_mae.py
  ┗ 📂CellBinDB
 ```
+
+
+## Tutorials
+### Data
+[CellBinDb Data download link](https://bgipan.genomics.cn/#/link/v2dKKUZf8M3YFpGWvB5g)    
+![figure1](docs/figure1.png)
+[Lizard Data download link](https://link.zhihu.com/?target=https%3A//www.kaggle.com/datasets/aadimator/lizard-dataset)
+[Conic Data download link](https://conic-challenge.grand-challenge.org/Data/)
+![figure2](docs/figure2.png)
